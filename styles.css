@@ -16,6 +16,10 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
 }
 
 html {
@@ -277,14 +281,18 @@ nav {
 /* Contact Page Styles */
 .contact-section {
     padding: 120px 5% 80px;
-    min-height: calc(100vh - 300px);
+    flex: 1;
     background-color: var(--background-light);
+    display: flex;
+    align-items: center;
 }
 
 .contact-container {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
+    width: 100%;
+    padding-bottom: 40px;
 }
 
 .contact-container h1 {
@@ -376,6 +384,7 @@ footer {
     background-color: var(--primary-color);
     color: var(--secondary-color);
     padding: 3rem 5% 1rem;
+    margin-top: auto;
 }
 
 .footer-content {

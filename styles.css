@@ -381,9 +381,33 @@ nav {
 }
 
 .contact-intro {
-    font-size: 1.2rem;
-    color: #666;
-    margin-bottom: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.contact-intro h1 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.contact-intro p {
+    color: #444;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-intro a, .privacy-content a {
+    color: var(--primary-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.contact-intro a:hover, .privacy-content a:hover {
+    color: #333;
+    border-bottom-color: #333;
 }
 
 .contact-info {
@@ -456,6 +480,21 @@ nav {
 
 .social-icon:hover {
     transform: scale(1.2);
+}
+
+@media (max-width: 768px) {
+    .contact-intro h1 {
+        font-size: 2rem;
+    }
+    
+    .contact-intro p {
+        font-size: 0.95rem;
+        padding: 0 1rem;
+    }
+    
+    .contact-method {
+        min-width: 100%;
+    }
 }
 
 /* Privacy Policy Styles */

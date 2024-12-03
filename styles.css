@@ -225,26 +225,33 @@ nav {
 }
 
 .store-button {
-    background: white;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.8);
     border-radius: 12px;
-    padding: 12px 30px;
+    padding: 12px 25px;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 15px;
     text-decoration: none;
+    color: white;
     min-width: 200px;
 }
 
 .store-button:hover {
+    background: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    opacity: 0.9;
 }
 
-.store-button img {
-    height: 45px;
-    width: auto;
+.store-button i {
+    font-size: 2.5rem;
+}
+
+.store-button span {
+    font-size: 0.9rem;
+    text-align: left;
+    line-height: 1.2;
 }
 
 @media (max-width: 768px) {
@@ -253,8 +260,12 @@ nav {
         padding: 10px 20px;
     }
     
-    .store-button img {
-        height: 35px;
+    .store-button i {
+        font-size: 2rem;
+    }
+    
+    .store-button span {
+        font-size: 0.8rem;
     }
 }
 

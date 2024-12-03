@@ -151,11 +151,11 @@ class Carousel {
         const movedBy = this.currentTranslate - this.prevTranslate;
         
         // If moved enough negative, next slide
-        if (movedBy < -100) {
+        if (movedBy < -60) {
             this.nextSlide();
         }
         // If moved enough positive, previous slide
-        else if (movedBy > 100) {
+        else if (movedBy > 60) {
             this.previousSlide();
         }
         // If not moved enough, snap back
@@ -185,12 +185,12 @@ class Carousel {
     }
 
     nextSlide() {
-        this.currentIndex = Math.min(this.currentIndex + 1, this.slides.length - 1);
+        this.currentIndex = (this.currentIndex + 1) % this.slides.length;
         this.updateCarousel();
     }
 
     previousSlide() {
-        this.currentIndex = Math.max(this.currentIndex - 1, 0);
+        this.currentIndex = (this.currentIndex - 1 + this.slides.length) % this.slides.length;
         this.updateCarousel();
     }
 

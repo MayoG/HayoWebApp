@@ -30,6 +30,6 @@ function redirectToStore() {
             window.location.href = PLAY_STORE_URL;
             break;
         default:
-            window.location.href = APP_STORE_URL;
+            window.location.href = FALLBACK_URL;
     }
 }

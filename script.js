@@ -30,27 +30,6 @@ window.addEventListener('scroll', () => {
     lastScroll = currentScroll;
 });
 
-// Animate elements on scroll
-const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-// Observe all feature cards
-document.querySelectorAll('.feature-card').forEach(card => {
-    observer.observe(card);
-});
-
 // Mobile menu toggle
 function toggleMobileMenu() {
     const navLinks = document.querySelector('.nav-links');
@@ -227,7 +206,39 @@ class Carousel {
     }
 }
 
-// Initialize carousel when DOM is loaded
+// Initialize carousel and animations when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    const carousel = new Carousel();
+    // Initialize carousel if it exists
+    if (document.querySelector('.carousel-track')) {
+        const carousel = new Carousel();
+    }
+    
+    // Initialize animations
+    const observerOptions = {
+        root: null,
+        rootMargin: '-50px',
+        threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate');
+            }
+        });
+    }, observerOptions);
+
+    // Observe specific elements
+    const elements = [
+        ...document.querySelectorAll('.feature-card'),
+        document.querySelector('.download-section'),
+        document.querySelector('.hero-content'),
+        document.querySelector('.hero-image'),
+        document.querySelector('.contact-intro'),
+        ...document.querySelectorAll('.contact-method')
+    ].filter(Boolean);
+
+    elements.forEach(element => {
+        observer.observe(element);
+    });
 });

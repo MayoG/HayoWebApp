@@ -845,6 +845,37 @@ nav {
     }
 }
 
+/* Animation styles */
+.feature-card,
+.download-section,
+.hero-content,
+.hero-image,
+.contact-intro,
+.contact-method {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease;
+}
+
+.feature-card.animate,
+.download-section.animate,
+.hero-content.animate,
+.hero-image.animate,
+.contact-intro.animate,
+.contact-method.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Add delay for feature cards */
+.feature-card:nth-child(1) { transition-delay: 0.2s; }
+.feature-card:nth-child(2) { transition-delay: 0.4s; }
+.feature-card:nth-child(3) { transition-delay: 0.6s; }
+
+/* Add delay for contact methods */
+.contact-method:nth-child(1) { transition-delay: 0.2s; }
+.contact-method:nth-child(2) { transition-delay: 0.4s; }
+
 /* Footer */
 footer {
     background-color: var(--primary-color);

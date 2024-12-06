@@ -911,10 +911,15 @@ footer {
     max-height: 45px;
 }
 
+.footer-links {
+    text-align: center;
+}
+
 .footer-links a {
     color: var(--secondary-color);
     text-decoration: none;
     margin: 0 1rem;
+    white-space: nowrap;
 }
 
 .social-links a {
